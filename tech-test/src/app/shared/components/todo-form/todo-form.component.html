@@ -1,0 +1,27 @@
+<form class="form" [formGroup]="form">
+  <div class="form__input">
+    <input
+      type="text"
+      formControlName="label"
+      placeholder="Label"
+      autofocus
+    >
+  </div>
+  <div class="form__input">
+    <input
+      type="text"
+      formControlName="description"
+      placeholder="Description"
+    >
+  </div>
+  <div class="form__input">
+    <input
+      type="text"
+      formControlName="category"
+      placeholder="Only bureaucracy, house, family, sport, hobbies, education"
+    >
+  </div>
+</form>
+<div class="form__btn-div">
+  <app-todo-button [buttonData]="submitButtonData" (onButtonClick)="clickButton()"></app-todo-button>
+</div>

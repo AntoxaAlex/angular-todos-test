@@ -1,0 +1,69 @@
+@import "src/assets/style/variables";
+
+.dialog-background {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: fixed;
+  z-index: 1000;
+  background-color: $dialogBackground;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dialog {
+  width: 80%;
+  max-width: 400px;
+  background-color: $white;
+  border-radius: 10px;
+
+  &__header {
+    border-radius: 10px 10px 0 0;
+    text-align: center;
+    position: relative;
+    background-color: $blue;
+    color: $white;
+    padding: 20px 0;
+    box-sizing: border-box;
+
+    &__text {
+      margin: 0;
+    }
+
+    &__close-btn {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 50px;
+    }
+  }
+
+  &__form-container {
+
+    &__input {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 10px;
+
+      input {
+        width: 90%;
+        height: 50px;
+      }
+    }
+  }
+
+  &__btn-div {
+    height: 70px;
+    width: 90%;
+    max-width: 300px;
+  }
+
+  &__header, &__form-container, &__btn-div {
+    width: 100%;
+  }
+
+}

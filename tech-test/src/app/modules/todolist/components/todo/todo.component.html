@@ -1,0 +1,26 @@
+<div
+  [class.done]="task.done"
+  class="todo-item"
+>
+  <div class="todo-item__icon">
+    <app-todo-icon [type]="task.category"></app-todo-icon>
+  </div>
+  <div class="todo-item__content" (click)="taskClicked(!!task.done)">
+    <p class="todo-item__label">{{ task.label + ':' }}</p>
+    <p class="todo-item__description">{{ task.description }}</p>
+  </div>
+  <div class="todo-item__buttons-container">
+    <div class="todo-item__buttons-container__edit">
+      <app-todo-button
+        [buttonData]="editButtonData"
+        (onButtonClick)="buttonClicked(names.edit)"
+      ></app-todo-button>
+    </div>
+    <div class="todo-item__buttons-container__delete">
+      <app-todo-button
+        [buttonData]="deleteButtonData"
+        (onButtonClick)="buttonClicked(names.delete)"
+      ></app-todo-button>
+    </div>
+  </div>
+</div>

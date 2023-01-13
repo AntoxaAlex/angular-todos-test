@@ -1,0 +1,41 @@
+<div class="todo-list">
+  <div class="todo-list__add-btn">
+    <app-todo-button
+      [buttonData]="addButtonData"
+      (onButtonClick)="clickAddTodoButton()"
+    ></app-todo-button>
+  </div>
+  <div
+    class="todo-list__container"
+  >
+    <div class="todo-list__container__filter">
+      <span
+        *ngFor="let selector of filterSelectors"
+        class="todo-list__container__filter__item"
+        (click)="filterSelectorClick(selector)"
+      >{{ selector }}</span>
+    </div>
+    <div
+      *ngIf="(tasks$ | async)! as tasks"
+      class="todo-list__container__content"
+    >
+      <ng-container *ngIf="tasks.length > 0;else noTasks">
+        <app-todo
+          *ngFor="let task of tasks;index as i"
+          [task]="task"
+          (onEditDeleteTask)="clickEditDeleteButton($event,task)"
+          (onToggleTaskCompletion)="toggleTaskCompletion($event,task)"
+          class="todo-list__container__content__task"
+        ></app-todo>
+      </ng-container>
+      <ng-template #noTasks>
+
+      </ng-template>
+    </div>
+  </div>
+</div>
+<app-dialog
+  class="dialog-container"
+  *ngIf="(isDialogOpened | async)"
+  (dialogSubmitted)="setTodo($event)"
+></app-dialog>

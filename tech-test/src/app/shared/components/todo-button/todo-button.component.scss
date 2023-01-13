@@ -1,0 +1,41 @@
+@import "src/assets/style/variables";
+@import "../../../../assets/style/mixins";
+
+:host {
+  width: 100%;
+  height: 100%;
+}
+
+.add-todo-button {
+  @include addSubmitTodoButton
+}
+
+.edit-todo-button {
+  @include editDeleteTodoButton($orange)
+}
+
+.delete-todo-button {
+  @include editDeleteTodoButton($red)
+}
+
+.close-todo-button {
+  @include editDeleteTodoButton($gray)
+}
+
+.submit-todo-button {
+  @include addSubmitTodoButton
+}
+
+.todo-button {
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 1s ease;
+
+  &__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

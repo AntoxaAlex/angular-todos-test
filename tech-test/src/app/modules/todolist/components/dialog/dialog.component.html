@@ -1,0 +1,21 @@
+<div class="dialog-background">
+  <div class="dialog">
+    <div class="dialog__header">
+      <div class="dialog__header__close-btn">
+        <app-todo-button
+          [buttonData]="closeButtonData"
+          (onButtonClick)="clickCloseButton()"
+        ></app-todo-button>
+      </div>
+      <h2 class="dialog__header__text">
+        {{ isNew ? names.newDialogHeader : (names.editDialogHeader + '' + taskData.label) }}
+      </h2>
+    </div>
+    <div class="dialog__form-container">
+      <app-todo-form
+      [task$]="task$"
+      (formSubmitted)="buttonClicked($event)"
+      ></app-todo-form>
+    </div>
+  </div>
+</div>

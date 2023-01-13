@@ -1,0 +1,26 @@
+@import 'variables';
+
+@mixin addSubmitTodoButton {
+  background-color: $transparent;
+  border: 1px solid $blue;
+  color: $blue;
+  border-radius: 10px;
+
+  &:hover {
+    background-color: $blue;
+    color: $white;
+    cursor: pointer;
+  }
+}
+
+@mixin editDeleteTodoButton($color) {
+  background-color: $transparent;
+  color: $color;
+  border-radius: 50%;
+
+  &:hover {
+    background-color: $color;
+    color: $white;
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,63 @@
+@import "src/assets/style/variables";
+
+.todo-item {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+
+  &__icon {
+    width: 10%;
+    min-width: 50px;
+  }
+
+  &__content {
+    width: 70%;
+    min-width: 120px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: 15px;
+
+    &__label {
+      width: 30%;
+    }
+
+    &__description {
+      width: 70%;
+    }
+  }
+
+  &__content:hover {
+    cursor: pointer;
+  }
+
+  &__date {
+    opacity: 0;
+  }
+
+  &__buttons-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__edit, &__delete {
+      width: 50px;
+    }
+  }
+}
+
+.todo-item.done {
+
+  .todo-item__description {
+    text-decoration-line: line-through;
+  }
+
+  .todo-item__date {
+    opacity: 1;
+  }
+}

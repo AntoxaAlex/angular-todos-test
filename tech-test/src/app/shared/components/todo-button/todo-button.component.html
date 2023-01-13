@@ -1,0 +1,16 @@
+<div class="todo-button {{ buttonData.type }}-todo-button" (click)="clickAddTodoButton()">
+  <div class="todo-button__content">
+    <span
+      *ngIf="buttonData.text"
+      class="todo-button__content__text"
+    >
+      {{ buttonData.text }}
+    </span>
+    <span
+      *ngIf="buttonData.icon"
+      class="material-symbols-outlined"
+    >
+      {{ buttonData.icon }}
+    </span>
+  </div>
+</div>

@@ -1,0 +1,37 @@
+@import "src/assets/style/variables";
+
+.todo-list {
+  width: 80%;
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  &__add-btn {
+    width: 100%;
+    min-width: 300px;
+  }
+
+  &__container {
+    max-width: 800px;
+
+    &__filter {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      border: 1px solid black;
+      border-radius: 20px;
+      margin: 15px 0;
+      padding: 0 10px;
+      box-sizing: border-box;
+
+      &__item {
+        cursor: pointer;
+        margin-right: 20px;
+      }
+    }
+  }
+}
